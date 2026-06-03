@@ -13,10 +13,10 @@ permissions:
 
 jobs:
   ai-review:
-    uses: pulumamidi-harsha/agentic-review/.github/workflows/ai-review.yml@3d867fc7a77eaae0eb5947885046c3862b948814
+    uses: pulumamidi-harsha/agentic-review/.github/workflows/ai-review.yml@0544accde02b652a775eb5a72871cbe4d62b8884
     with:
       review_type: quick
     secrets:
       AI_API_KEY: ${{ secrets.AI_API_KEY }}
       AI_API_ENDPOINT: ${{ secrets.AI_API_ENDPOINT }}
-      ORG_PAT: ${{ secrets.ORG_PAT }}
+      ORG_PAT: ${{ secrets.ORG_PAT || github.token }}
